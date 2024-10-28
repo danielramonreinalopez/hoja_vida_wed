@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="micss.css">
+    <title>Datos personales</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script type="text/javascript" src="/Script/miScript.js"></script>
+    
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        
+
+        <div class="row centered-images">
+            <div class="col-sm-4 text-center">
+                <img src="C:\Users\Asus\OneDrive\Documentos\visual code projects\Progamacion web\Hoja de vida\EscudoColombiaPng.png"
+                    alt="Escudo de Colombia">
+            </div>
+            <div class="col-sm-4 text-center">
+                <h4>FORMATO UNICO</h4>
+                <h1>HOJA DE VIDA</h1>
+                <h5>Persona Natural</h5>
+                <h6>(Leyes 190 de 1995, 489 y 443 de 1998)</h6>
+            </div>
+            <div class="col-sm-4 text-center">
+                <img src="C:\Users\Asus\OneDrive\Documentos\visual code projects\Progamacion web\Hoja de vida\WhatsApp Image 2024-08-16 at 8.42.07 PM.jpeg"
+                    alt="Foto personal">
+            </div>
+        </div>
+
+        <div class="row nav-links">
+            <div class="col-sm-2 text-center"><a href="DatosPersonalesHojaVida.html">DATOS PERSONLES</a></div>
+            <div class="col-sm-2 text-center"><a href="FormacionAcademica.html">FORMACION ACADEMICA</a></div>
+            <div class="col-sm-2 text-center"><a href="ExperienciaLaboral.html">EXPERIENCIA LABORAL</a></div>
+            <div class="col-sm-2 text-center"><a href="TiempoExperiencia.html">TIEMPO TOTAL DE EXPERIENCIA</a></div>
+            <div class="col-sm-4 text-center"><a href="FirmaServidor.html">FIRMA DEL SERVIDOR PUBLICO</a></div>
+        </div>
+
+        <br>
+
+        <h3>1 - DATOS PERSONALES</h3>
+        
+        <button id="previewBtn" class="btn btn-primary">Previsualizar</button>
+        <div id="previewSection" style="display: none;">
+            <h3>Vista Previa de Datos Personales</h3>
+            <p id="previewContent"></p>
+        </div>
+
+        <div class="row form-section">
+            <div class="col-sm-4">
+                <h5>PRIMER APELLIDO</h5>
+                <input type="text" name="primer_apellido">
+            </div>
+            <div class="col-sm-4">
+                <h5>SEGUNDO APELLIDO (O DE CASADA)</h5>
+                <input type="text" name="segundo_apellido">
+            </div>
+            <div class="col-sm-4">
+                <h5>NOMBRES</h5>
+                <input type="text" name="nombres">
+            </div>
+        </div>
+
+        <div class="row form-section">
+            <div class="col-sm-4">
+                <h5>DOCUMENTO DE IDENTIFICACIÓN</h5>
+                <label class="radio-inline"><input type="radio" name="optradio" checked> C.C</label>
+                <label class="radio-inline"><input type="radio" name="optradio"> C.E</label>
+                <label class="radio-inline"><input type="radio" name="optradio"> P.S</label>
+                <br>
+                <span>No.</span>
+                <input type="text" name="numero_doc">
+            </div>
+            <div class="col-sm-4">
+                <h5>SEXO</h5>
+                F <input type="radio" name="sexo" value="F">
+                M <input type="radio" name="sexo" value="M">
+            </div>
+            <div class="col-sm-4">
+                <label class="radio-inline">
+                    <h5>NACIONALIDAD</h5>
+                </label>
+                <br>
+                COL. <input type="radio" name="nacionalidad" value="Col">
+                EXTRANJERO. <input type="radio" name="nacionalidad" value="EXTRANJERO">
+
+                PAIS
+                <select id="pais-nacimiento" name="pais_nacimiento">
+                    <option value="">Seleccione un país</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row form-section">
+            <div class="col-sm-4">
+                <h5>LIBRETA MILITAR</h5>
+                PRIMERA CLASE <input type="radio" name="libreta" value="primeraClase">
+                SEGUNDA CLASE <input type="radio" name="libreta" value="segundaClase">
+            </div>
+            <div class="col-sm-4">
+                <h5>NÚMERO</h5>
+                <input type="text" name="numero_libreta">
+            </div>
+            <div class="col-sm-4">
+                <h5>D.M</h5>
+                <input type="text" name="dm">
+            </div>
+        </div>
+
+        <div class="row form-section">
+            <div class="col-sm-6">
+                <h5>FECHA Y LUGAR DE NACIMIENTO</h5>
+
+                <h5>FECHA</h5>
+                DIA
+                <select id="nacimiento-dia" name="nacimiento_dia" style="width: 10%; box-sizing: border-box;">
+                    <option value="">Día</option>
+                </select>
+                MES
+                <select id="nacimiento-mes" name="nacimiento_mes" style="width: 10%; box-sizing: border-box;">
+                    <option value="">Mes</option>
+                </select>
+                AÑO
+                <select id="nacimiento-año" name="nacimiento_año" style="width: 10%; box-sizing: border-box;">
+                    <option value="">Año</option>
+                </select>
+                <br>
+
+                PAIS
+                <select id="pais-nacimiento" name="pais_nacimiento">
+                    <option value="">Seleccione un país</option>
+                </select>
+
+                <br>
+
+                DEPARTAMENTO
+                <select id="departamento-nacimiento" name="departamento_nacimiento">
+                    <option value="">Seleccione un departamento</option>
+                </select>
+                <br>
+
+                MUNICIPIO
+                <select id="municipio-nacimiento" name="municipio_nacimiento">
+                    <option value="">Seleccione un municipio</option>
+                </select>
+            </div>
+
+            <div class="col-sm-6">
+                <h5>DIRECCION DE CORRESPONDENCIA</h5>
+                <input type="text" name="direccion" style="width: 50%; box-sizing: border-box;">
+                <br>
+                PAIS
+                <select id="pais-correspondencia" name="pais_correspondencia">
+                    <option value="">Seleccione un país</option>
+                </select>
+
+                DEPTO
+                <select id="departamento-correspondencia" name="departamento_correspondencia"
+                    style="width: 20%; box-sizing: border-box;">
+                    <option value="">Seleccione un departamento</option>
+                </select>
+                <br>
+
+                MUNICIPIO
+                <select id="municipio-correspondencia" name="municipio_correspondencia"
+                    style="width: 20%; box-sizing: border-box;">
+                    <option value="">Seleccione un municipio</option>
+                </select>
+                <br>
+
+                TELEFONO <input type="text" name="telefono" style="width: 20%; box-sizing: border-box;">
+                EMAIL <input type="text" name="email" style="width: 20%; box-sizing: border-box;">
+            </div>
+        </div>
+    </div>
+    </div>
+
+</body>
+
+</html>
+
