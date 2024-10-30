@@ -91,7 +91,7 @@
                 MES <select id="nacimiento-mes" name="nacimiento_mes"><option value="">Mes</option></select>
                 AÑO <select id="nacimiento-año" name="nacimiento_año"><option value="">Año</option></select>
             
-                <br><h5>PAIS</h5><select id="pais-nacimiento" name="pais_nacimiento"><option value="">Seleccione un país</option></select>
+                <br><h5>PAIS</h5><select id="pais-identificacion" name="pais_identificacion"><option value="">Seleccione un país</option></select>
                 <br><h5>DEPARTAMENTO</h5><select id="departamento-nacimiento" name="departamento_nacimiento"><option value="">Seleccione un departamento</option></select>
                 <br><h5>MUNICIPIO</h5><select id="municipio-nacimiento" name="municipio_nacimiento"><option value="">Seleccione un municipio</option></select>
             </div>
