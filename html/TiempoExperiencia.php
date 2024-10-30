@@ -35,11 +35,11 @@
         </div>
 
         <div class="row nav-links">
-            <div class="col-sm-2 text-center"><a href="DatosPersonalesHojaVida.html">DATOS PERSONLES</a></div>
-            <div class="col-sm-2 text-center"><a href="FormacionAcademica.html">FORMACION ACADEMICA</a></div>
-            <div class="col-sm-2 text-center"><a href="ExperienciaLaboral.html">EXPERIENCIA LABORAL</a></div>
-            <div class="col-sm-2 text-center"><a href="TiempoExperiencia.html">TIEMPO TOTAL DE EXPERIENCIA</a></div>
-            <div class="col-sm-4 text-center"><a href="FirmaServidor.html">FIRMA DEL SERVIDOR PUBLICO</a></div>
+        <div class="col-sm-2 text-center"><a href="DatosPersonalesHojaVida.php">DATOS PERSONALES</a></div>
+            <div class="col-sm-2 text-center"><a href="FormacionAcademica.php">FORMACION ACADEMICA</a></div>
+            <div class="col-sm-2 text-center"><a href="ExperienciaLaboral.php">EXPERIENCIA LABORAL</a></div>
+            <div class="col-sm-2 text-center"><a href="TiempoExperiencia.php">TIEMPO TOTAL DE EXPERIENCIA</a></div>
+            <div class="col-sm-4 text-center"><a href="FirmaServidor.php">FIRMA DEL SERVIDOR PUBLICO</a></div>
         </div>
 
         <h3>4- TIEMPO TOTAL DE EXPERIENCIA</h3>
