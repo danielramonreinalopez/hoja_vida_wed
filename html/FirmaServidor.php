@@ -33,12 +33,12 @@
         </div>
 
         <div class="row nav-links">
-        <div class="col-sm-2 text-center"><a href="DatosPersonalesHojaVida.php">DATOS PERSONALES</a></div>
+            <div class="col-sm-2 text-center"><a href="DatosPersonalesHojaVida.php">DATOS PERSONALES</a></div>
             <div class="col-sm-2 text-center"><a href="FormacionAcademica.php">FORMACION ACADEMICA</a></div>
             <div class="col-sm-2 text-center"><a href="ExperienciaLaboral.php">EXPERIENCIA LABORAL</a></div>
             <div class="col-sm-2 text-center"><a href="TiempoExperiencia.php">TIEMPO TOTAL DE EXPERIENCIA</a></div>
-            <div class="col-sm-4 text-center"><a href="FirmaServidor.php">FIRMA DEL SERVIDOR PUBLICO</a></div>
-        
+        </div>
+
         <h3>5- FIRMA DEL SERVIDOR PUBLICO O CONTRATISTA</h3>
 
         <div class="row form-section">
@@ -58,15 +58,27 @@
 
         <div class="row form-section">
             <div class="col-sm-6">
-                <br><h5>DEPARTAMENTO</h5><select id="departamento-nacimiento" name="departamento_nacimiento"><option value="">Seleccione un departamento</option></select>
-                <br><h5>MUNICIPIO</h5><select id="municipio-nacimiento" name="municipio_nacimiento"><option value="">Seleccione un municipio</option></select>
+                <br>
+                <h5>DEPARTAMENTO</h5><select id="departamento-nacimiento" name="departamento_nacimiento">
+                    <option value="">Seleccione un departamento</option>
+                </select>
+                <br>
+                <h5>MUNICIPIO</h5><select id="municipio-nacimiento" name="municipio_nacimiento">
+                    <option value="">Seleccione un municipio</option>
+                </select>
             </div>
             <div class="col-sm-6">
                 <h5><i>FECHA</i></h5>
                 <div class="row">
-                    DIA <select id="nacimiento-dia" name="nacimiento_dia"><option value="">Día</option></select>
-                    MES <select id="nacimiento-mes" name="nacimiento_mes"><option value="">Mes</option></select>
-                    AÑO <select id="nacimiento-año" name="nacimiento_año"><option value="">Año</option></select>
+                    DIA <select id="nacimiento-dia" name="nacimiento_dia">
+                        <option value="">Día</option>
+                    </select>
+                    MES <select id="nacimiento-mes" name="nacimiento_mes">
+                        <option value="">Mes</option>
+                    </select>
+                    AÑO <select id="nacimiento-año" name="nacimiento_año">
+                        <option value="">Año</option>
+                    </select>
                 </div>
             </div>
         </div>

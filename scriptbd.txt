@@ -1,0 +1,86 @@
+CREATE DATABASE IF NOT EXISTS hojavida;
+
+CREATE TABLE IF NOT EXISTS DatosPersonales (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    primer_apellido VARCHAR(100) NOT NULL,
+    segundo_apellido VARCHAR(100),
+    nombres VARCHAR(100) NOT NULL,
+    tipo_documento ENUM('C.C', 'C.E', 'P.S') NOT NULL,
+    numero_doc VARCHAR(100) NOT NULL UNIQUE,
+    sexo ENUM('F', 'M') NOT NULL,
+    nacionalidad ENUM('Col', 'Extranjero') NOT NULL,
+    pais VARCHAR(100),
+    libreta_tipo ENUM('primera_clase', 'segunda_clase'),
+    libreta_numero VARCHAR(100),
+    nacimiento_dia TINYINT,
+    nacimiento_mes TINYINT,
+    nacimiento_año YEAR,
+    pais_nacimiento VARCHAR(100),
+    departamento_nacimiento VARCHAR(100),
+    municipio_nacimiento VARCHAR(100),
+    direccion_correspondencia VARCHAR(100),
+    pais_correspondencia VARCHAR(100),
+    departamento_correspondencia VARCHAR(100),
+    municipio_correspondencia VARCHAR(100),
+    telefono VARCHAR(100),
+    email VARCHAR(100)
+);
+
+CREATE TABLE IF NOT EXISTS EducacionBasicaMedia (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    ultimo_grado_aprobado ENUM('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11') NOT NULL,
+    titulo_obtenido ENUM('tecnica', 'tecnologica', 'tecnologica_especialidad', 'especializacion', 'maestria', 'doctorado'),
+    fecha_grado_mes TINYINT,
+    fecha_grado_anio YEAR
+);
+
+CREATE TABLE IF NOT EXISTS EducacionSuperior (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    modalidad_academica ENUM('TC', 'TL', 'TE', 'UN', 'ES', 'MG', 'DOC') NOT NULL,
+    semestres_aprobados TINYINT,
+    graduado ENUM('SI', 'NO') NOT NULL,
+    titulo_obtenido VARCHAR(100),
+    terminacion_mes TINYINT,
+    terminacion_anio YEAR,
+    tarjeta_profesional VARCHAR(100)
+);
+
+CREATE TABLE IF NOT EXISTS Idiomas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    idioma VARCHAR(100) NOT NULL,
+    habla ENUM('R', 'B', 'MB') NOT NULL,
+    lee ENUM('R', 'B', 'MB') NOT NULL,
+    escribe ENUM('R', 'B', 'MB') NOT NULL
+);
+CREATE TABLE IF NOT EXISTS ExperienciaLaboral (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    empresa VARCHAR(100) NOT NULL,
+    tipo_empresa ENUM('publica', 'privada') NOT NULL,
+    pais VARCHAR(100),
+    departamento VARCHAR(100),
+    municipio VARCHAR(100),
+    email_empresa VARCHAR(100),
+    telefono_empresa VARCHAR(100),
+    fecha_ingreso DATE,
+    fecha_retiro DATE,
+    cargo VARCHAR(100),
+    dependencia VARCHAR(100),
+    direccion VARCHAR(100)
+);
+
+CREATE TABLE IF NOT EXISTS TiempoExperienciaLaboral (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    ocupacion ENUM('servidor publico', 'empleado del sector privado', 'trabajador independiente') NOT NULL,
+    meses_experiencia TINYINT,
+    años_experiencia TINYINT,
+    total_años_experiencia DECIMAL(5, 2)
+);
+
+CREATE TABLE IF NOT EXISTS FirmaServidor (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    juramento ENUM('si', 'no') NOT NULL,
+    departamento VARCHAR(100),
+    municipio VARCHAR(100),
+    fecha_firma DATE,
+    firma VARCHAR(100)
+);

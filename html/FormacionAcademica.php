@@ -1,111 +1,166 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/micss.css">
-    <title>Formacion academica</title>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../javascript/miScript.js"></script>
+    <title>Formación Académica</title>
 </head>
 
 <body>
-
     <div class="container">
-        <div class="row centered-images">
-            <div class="col-sm-4 text-center">
-                <img src="C:\Users\Asus\OneDrive\Documentos\visual code projects\Progamacion web\Hoja de vida\EscudoColombiaPng.png"
-                    alt="Escudo de Colombia">
+        <div class="container">
+            <div class="row centered-images">
+                <div class="col-sm-4 text-center">
+                    <img src="../images/EscudoColombiaPng.png" alt="Escudo de Colombia">
+                </div>
+                <div class="col-sm-4 text-center">
+                    <h4>FORMATO UNICO</h4>
+                    <h1>HOJA DE VIDA</h1>
+                    <h5>Persona Natural</h5>
+                    <h6>(Leyes 190 de 1995, 489 y 443 de 1998)</h6>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <img src="../images/WhatsAppImage.jpeg" alt="Foto personal">
+                </div>
             </div>
-            <div class="col-sm-4 text-center">
-                <h4>FORMATO UNICO</h4>
-                <h1>HOJA DE VIDA</h1>
-                <h5>Persona Natural</h5>
-                <h6>(Leyes 190 de 1995, 489 y 443 de 1998)</h6>
+
+            <div class="row nav-links">
+                <div class="col-sm-2 text-center"><a href="DatosPersonalesHojaVida.php">DATOS PERSONALES</a></div>
+                <div class="col-sm-2 text-center"><a href="FormacionAcademica.php">FORMACION ACADEMICA</a></div>
+                <div class="col-sm-2 text-center"><a href="ExperienciaLaboral.php">EXPERIENCIA LABORAL</a></div>
+                <div class="col-sm-2 text-center"><a href="TiempoExperiencia.php">TIEMPO TOTAL DE EXPERIENCIA</a></div>
+
             </div>
-            <div class="col-sm-4 text-center">
-                <img src="C:\Users\Asus\OneDrive\Documentos\visual code projects\Progamacion web\Hoja de vida\WhatsApp Image 2024-08-16 at 8.42.07 PM.jpeg"
-                    alt="Foto personal">
-            </div>
+
+            <form method="POST" action="guardar_datos_formacionacademica.php">
+                <!-- Educación Básica y Media Section -->
+                <div class="form-section">
+                    <h5>EDUCACIÓN BÁSICA Y MEDIA</h5>
+                    <p>MARQUE CON UNA X EL ÚLTIMO GRADO APROBADO (LOS GRADOS DE 1o. A 6o. DE BACHILLERATO EQUIVALEN A LOS GRADOS 6o. A 11o. DE EDUCACIÓN BÁSICA SECUNDARIA Y MEDIA)</p>
+                    <div class="row">
+                        <div class="col-xs-4 text-center">
+                            <h6>PRIMARIA</h6>
+                            <label class="radio-inline"><input type="radio" name="ultimo_grado_aprobado" value="1" required>1o</label>
+                            <label class="radio-inline"><input type="radio" name="ultimo_grado_aprobado" value="2">2o</label>
+                            <label class="radio-inline"><input type="radio" name="ultimo_grado_aprobado" value="3">3o</label>
+                            <label class="radio-inline"><input type="radio" name="ultimo_grado_aprobado" value="4">4o</label>
+                            <label class="radio-inline"><input type="radio" name="ultimo_grado_aprobado" value="5">5o</label>
+                        </div>
+                        <div class="col-xs-4 text-center">
+                            <h6>SECUNDARIA</h6>
+                            <label class="radio-inline"><input type="radio" name="ultimo_grado_aprobado" value="6">6o</label>
+                            <label class="radio-inline"><input type="radio" name="ultimo_grado_aprobado" value="7">7o</label>
+                            <label class="radio-inline"><input type="radio" name="ultimo_grado_aprobado" value="8">8o</label>
+                            <label class="radio-inline"><input type="radio" name="ultimo_grado_aprobado" value="9">9o</label>
+                        </div>
+                        <div class="col-xs-4 text-center">
+                            <h6>MEDIA</h6>
+                            <label class="radio-inline"><input type="radio" name="ultimo_grado_aprobado" value="10">10o</label>
+                            <label class="radio-inline"><input type="radio" name="ultimo_grado_aprobado" value="11">11o</label>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <h6>TÍTULO OBTENIDO:</h6>
+                            <select name="titulo_obtenido" class="form-control">
+                                <option value="" disabled selected>Seleccione un título</option>
+                                <option value="tecnica">Técnica</option>
+                                <option value="tecnologica">Tecnológica</option>
+                                <option value="tecnologica_especialidad">Tecnológica Especialidad</option>
+                                <option value="especializacion">Especialización</option>
+                                <option value="maestria">Maestría</option>
+                                <option value="doctorado">Doctorado</option>
+                            </select>
+                        </div>
+                        <div class="col-xs-6">
+                            <h6>FECHA DE GRADO:</h6>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <input type="number" name="fecha_grado_mes" class="form-control" placeholder="Mes" min="1" max="12">
+                                </div>
+                                <div class="col-xs-6">
+                                    <input type="number" name="fecha_grado_anio" class="form-control" placeholder="Año" min="1900" max="2100">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Educación Superior Section -->
+                <div class="form-section">
+                    <h5>EDUCACIÓN SUPERIOR (PREGRADO Y POSTGRADO)</h5>
+                    <p>Diligencie este punto en estricto orden cronológico, en modalidad académica escriba: TC (Técnica), TL (Tecnológica), TE (Tecnológica Especializada), UN (Universitaria), ES (Especialización), MG (Maestría o Magister), DOC (Doctorado o PhD).</p>
+                    <table class="table-container">
+                        <tr>
+                            <th>Modalidad Académica</th>
+                            <th>No. Semestres Aprobados</th>
+                            <th>Graduado (SI / NO)</th>
+                            <th>Nombre de los Estudios o Título Obtenido</th>
+                            <th>Terminación (Mes / Año)</th>
+                            <th>No. de Tarjeta Profesional</th>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="modalidad_academica" class="form-control"></td>
+                            <td><input type="number" name="semestres_aprobados" class="form-control" min="1"></td>
+                            <td>
+                                <label class="radio-inline"><input type="radio" name="graduado" value="SI" required>SI</label>
+                                <label class="radio-inline"><input type="radio" name="graduado" value="NO">NO</label>
+                            </td>
+                            <td><input type="text" name="titulo_obtenido_superior" class="form-control"></td>
+                            <td>
+                                <input type="number" name="terminacion_mes" class="form-control" placeholder="Mes" min="1" max="12" style="width: 45%; display: inline-block;">
+                                <input type="number" name="terminacion_anio" class="form-control" placeholder="Año" min="1900" max="2100" style="width: 45%; display: inline-block;">
+                            </td>
+                            <td><input type="text" name="tarjeta_profesional" class="form-control"></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Idiomas Section -->
+                <div class="form-section">
+                    <h5>ESPECIFIQUE LOS IDIOMAS DIFERENTES AL ESPAÑOL QUE: HABLA, LEE, ESCRIBE DE FORMA, REGULAR (R), BIEN (B) O MUY BIEN (MB)</h5>
+                    <table class="table-container">
+                        <tr>
+                            <th>Idioma</th>
+                            <th>Lo Habla</th>
+                            <th>Lo Lee</th>
+                            <th>Lo Escribe</th>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="idioma" class="form-control" required></td>
+                            <td>
+                                <label class="radio-inline"><input type="radio" name="habla" value="R" required>R</label>
+                                <label class="radio-inline"><input type="radio" name="habla" value="B">B</label>
+                                <label class="radio-inline"><input type="radio" name="habla" value="MB">MB</label>
+                            </td>
+                            <td>
+                                <label class="radio-inline"><input type="radio" name="lee" value="R" required>R</label>
+                                <label class="radio-inline"><input type="radio" name="lee" value="B">B</label>
+                                <label class="radio-inline"><input type="radio" name="lee" value="MB">MB</label>
+                            </td>
+                            <td>
+                                <label class="radio-inline"><input type="radio" name="escribe" value="R" required>R</label>
+                                <label class="radio-inline"><input type="radio" name="escribe" value="B">B</label>
+                                <label class="radio-inline"><input type="radio" name="escribe" value="MB">MB</label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="row form-section">
+                    <div class="col-sm-12 text-center">
+                        <button type="submit" class="btn btn-primary">Guardar Datos de Formación Académica</button>
+                    </div>
+                </div>
+            </form>
         </div>
-
-        <div class="row nav-links">
-        <div class="col-sm-2 text-center"><a href="DatosPersonalesHojaVida.php">DATOS PERSONALES</a></div>
-            <div class="col-sm-2 text-center"><a href="FormacionAcademica.php">FORMACION ACADEMICA</a></div>
-            <div class="col-sm-2 text-center"><a href="ExperienciaLaboral.php">EXPERIENCIA LABORAL</a></div>
-            <div class="col-sm-2 text-center"><a href="TiempoExperiencia.php">TIEMPO TOTAL DE EXPERIENCIA</a></div>
-            <div class="col-sm-4 text-center"><a href="FirmaServidor.php">FIRMA DEL SERVIDOR PUBLICO</a></div>
-        </div>
-
-        <h3>2- FORMACION ACADEMICA </h3>
-        
-
-        <div class="row form-section">
-            <div class="col-sm-12">
-                <h5>EDUCACION BASICA Y MEDIA</h5>
-                <br>
-                MAEQUE CON UNA X EL ULTIMO GRADO APROVADO
-                (LOS GRADOS DE 1o. A 6o DE BACHILLERATO
-                EQUIVALEN LOS GRADOS 6o. A 11o. DE
-                EDUCACION BASICA SECUNDARIA Y MEDIA)
-            </div>
-        </div>
-
-        <div class="row form-section">
-            <div class="col-sm-12 text-center">
-                <label class="radio-inline">
-                    <H5>EDUCACION BASICA</H5>
-                </label>
-            </div>
-
-            <div class="col-sm-4 text-center">
-                <h6>PRIMARIA</h6>
-            </div>
-
-            <div class="col-sm-4 text-center">
-                <h6>SECUNDARIA</h6>
-            </div>
-
-            <div class="col-sm-4 text-center">
-                <h6>MEDIA</h6>
-            </div>
-
-
-            <div class="col-sm-4 text-center">
-
-                1o <input type="radio" name="tipo_doc" value="1o">
-                2o <input type="radio" name="tipo_doc" value="1o">
-                3o <input type="radio" name="tipo_doc" value="1o">
-                4o <input type="radio" name="tipo_doc" value="1o">
-                5o <input type="radio" name="tipo_doc" value="1o">
-            </div>
-
-            <div class="col-sm-4 text-center">
-
-                6o <input type="radio" name="tipo_doc" value="1o">
-                7o <input type="radio" name="tipo_doc" value="1o">
-                8o <input type="radio" name="tipo_doc" value="1o">
-                9o <input type="radio" name="tipo_doc" value="1o">
-            </div>
-
-            <div class="col-sm-4 text-center">
-                10o <input type="radio" name="tipo_doc" value="1o">
-                11o <input type="radio" name="tipo_doc" value="1o">
-            </div>
-        </div>
-
-        <div class="row form-section">
-            <div class="col-sm-12 text-center"><label class="radio-inline"></label>
-                <H5>TITULO OBTENIDO</H5>
-                </label>
-            </div>
-
-        </div>
-
-        
-
     </div>
 </body>
 
