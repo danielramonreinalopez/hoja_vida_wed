@@ -10,7 +10,7 @@ function fetchCountries() {
                 .sort();
 
             // Llama a populateSelect con los selectores donde necesitas los países
-            populateSelect(['#pais-nacimiento', '#pais-correspondencia', '#pais-identificacion'], countries);
+            populateSelect(['#pais-nacimiento', '#pais-correspondencia', '#pais-identificacion', '#pais-nacionalidad','#pais'], countries);
         })
         .catch(error => console.error('Error buscando países:', error));
 }

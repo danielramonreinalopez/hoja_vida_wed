@@ -17,7 +17,7 @@
     <div class="container">
         <div class="row centered-images">
             <div class="col-sm-4 text-center">
-                <img src="C:\Users\Asus\OneDrive\Documentos\visual code projects\Progamacion web\Hoja de vida\EscudoColombiaPng.png"
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkqrBfWtzYEHZOcWAdArjIdex-EfGiRD8iNQ&s"
                     alt="Escudo de Colombia">
             </div>
             <div class="col-sm-4 text-center">
@@ -27,7 +27,7 @@
                 <h6>(Leyes 190 de 1995, 489 y 443 de 1998)</h6>
             </div>
             <div class="col-sm-4 text-center">
-                <img src="C:\Users\Asus\OneDrive\Documentos\visual code projects\Progamacion web\Hoja de vida\WhatsApp Image 2024-08-16 at 8.42.07 PM.jpeg"
+                <img src="https://www.race.es/revista-autoclub/wp-content/uploads/sites/4/2016/09/Toyota-300x262.jpg"
                     alt="Foto personal">
             </div>
         </div>
@@ -37,6 +37,8 @@
             <div class="col-sm-2 text-center"><a href="FormacionAcademica.php">FORMACION ACADEMICA</a></div>
             <div class="col-sm-2 text-center"><a href="ExperienciaLaboral.php">EXPERIENCIA LABORAL</a></div>
             <div class="col-sm-2 text-center"><a href="TiempoExperiencia.php">TIEMPO TOTAL DE EXPERIENCIA</a></div>
+            <div class="col-sm-2 text-center"><a href="mostrar_datos.php">DATOS GUARDADOS</a></div>
+
         </div>
 
         <h3>5- FIRMA DEL SERVIDOR PUBLICO O CONTRATISTA</h3>

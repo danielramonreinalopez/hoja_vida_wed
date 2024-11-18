@@ -18,7 +18,7 @@
     <div class="container">
         <div class="row centered-images">
             <div class="col-sm-4 text-center">
-                <img src="../images/EscudoColombiaPng.png" alt="Escudo de Colombia">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkqrBfWtzYEHZOcWAdArjIdex-EfGiRD8iNQ&s" alt="Escudo de Colombia">
             </div>
             <div class="col-sm-4 text-center">
                 <h4>FORMATO UNICO</h4>
@@ -27,7 +27,7 @@
                 <h6>(Leyes 190 de 1995, 489 y 443 de 1998)</h6>
             </div>
             <div class="col-sm-4 text-center">
-                <img src="../images/WhatsAppImage.jpeg" alt="Foto personal">
+                <img src="https://www.race.es/revista-autoclub/wp-content/uploads/sites/4/2016/09/Toyota-300x262.jpg" alt="Foto personal">
             </div>
         </div>
 
@@ -36,6 +36,8 @@
             <div class="col-sm-2 text-center"><a href="FormacionAcademica.php">FORMACION ACADEMICA</a></div>
             <div class="col-sm-2 text-center"><a href="ExperienciaLaboral.php">EXPERIENCIA LABORAL</a></div>
             <div class="col-sm-2 text-center"><a href="TiempoExperiencia.php">TIEMPO TOTAL DE EXPERIENCIA</a></div>
+            <div class="col-sm-2 text-center"><a href="mostrar_datos.php">DATOS GUARDADOS</a></div>
+
         </div>
         <h3>3- EXPERIENCIA LABORAL</h3>
 
@@ -62,18 +64,20 @@
             </div>
 
             <div class="row form-section">
-                <div class="col-sm-4">
-                    <h5>PAIS:</h5>
-                    <input type="text" name="pais" class="form-control" required>
-                </div>
-                <div class="col-sm-4">
-                    <h5>DEPARTAMENTO:</h5>
-                    <input type="text" name="departamento" class="form-control" required>
-                </div>
-                <div class="col-sm-4">
-                    <h5>MUNICIPIO:</h5>
-                    <input type="text" name="municipio" class="form-control" required>
-                </div>
+                 PAIS
+                <select id="pais-correspondencia" name="pais">
+                    <option value="">Seleccione un país</option>
+                </select>
+
+                DEPARTAMENTO
+                <select id="departamento-correspondencia" name="departamento">
+                    <option value="">Seleccione un departamento</option>
+                </select>
+
+                MUNICIPIO
+                <select id="municipio-nacimiento" name="municipio">
+                    <option value="">Seleccione un municipio</option>
+                </select>
             </div>
 
             <div class="row form-section">

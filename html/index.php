@@ -13,7 +13,7 @@
     <div class="container">
         <div class="row centered-images">
             <div class="col-sm-4 text-center">
-                <img src="C:/Users/Asus/OneDrive/Documentos/visual code projects/Progamacion web/Hoja de vida/EscudoColombiaPng.png" alt="Escudo de Colombia">
+                <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2Fescudo-de-colombia-coat-of-arms-of-colombia-by-verde--435371489122344683%2F&psig=AOvVaw1LL1dSWd9PmuCP7SBookzS&ust=1731899438908000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCPCY-qmy4okDFQAAAAAdAAAAABAE" alt="Escudo de Colombia">
             </div>
             <div class="col-sm-4 text-center">
                 <h4>FORMATO UNICO</h4>
@@ -32,6 +32,8 @@
             <div class="col-sm-2 text-center"><a href="ExperienciaLaboral.php">EXPERIENCIA LABORAL</a></div>
             <div class="col-sm-2 text-center"><a href="TiempoExperiencia.php">TIEMPO TOTAL DE EXPERIENCIA</a></div>
             <div class="col-sm-4 text-center"><a href="FirmaServidor.php">FIRMA DEL SERVIDOR PUBLICO</a></div>
+            <div class="col-sm-2 text-center"><a href="mostrar_datos.php">DATOS GUARDADOS</a></div>
+
         </div>
         </body>
 </html>

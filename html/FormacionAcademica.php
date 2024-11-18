@@ -16,7 +16,7 @@
         <div class="container">
             <div class="row centered-images">
                 <div class="col-sm-4 text-center">
-                    <img src="../images/EscudoColombiaPng.png" alt="Escudo de Colombia">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkqrBfWtzYEHZOcWAdArjIdex-EfGiRD8iNQ&s" alt="Escudo de Colombia">
                 </div>
                 <div class="col-sm-4 text-center">
                     <h4>FORMATO UNICO</h4>
@@ -25,7 +25,7 @@
                     <h6>(Leyes 190 de 1995, 489 y 443 de 1998)</h6>
                 </div>
                 <div class="col-sm-4 text-center">
-                    <img src="../images/WhatsAppImage.jpeg" alt="Foto personal">
+                    <img src="https://www.race.es/revista-autoclub/wp-content/uploads/sites/4/2016/09/Toyota-300x262.jpg" alt="Foto personal">
                 </div>
             </div>
 
@@ -34,8 +34,12 @@
                 <div class="col-sm-2 text-center"><a href="FormacionAcademica.php">FORMACION ACADEMICA</a></div>
                 <div class="col-sm-2 text-center"><a href="ExperienciaLaboral.php">EXPERIENCIA LABORAL</a></div>
                 <div class="col-sm-2 text-center"><a href="TiempoExperiencia.php">TIEMPO TOTAL DE EXPERIENCIA</a></div>
+                <div class="col-sm-2 text-center"><a href="mostrar_datos.php">DATOS GUARDADOS</a></div>
+
 
             </div>
+
+            <H3>2-FORMACION ACADEMICA</H3>
 
             <form method="POST" action="guardar_datos_formacionacademica.php">
                 <!-- Educación Básica y Media Section -->
@@ -106,7 +110,18 @@
                             <th>No. de Tarjeta Profesional</th>
                         </tr>
                         <tr>
-                            <td><input type="text" name="modalidad_academica" class="form-control"></td>
+                            <td><select name="Modalidad academica" class="form-control">
+                                <option value="" disabled selected>Seleccione un título</option>
+                                <option value="tecnica">TC</option>
+                                <option value="tecnologica">TL</option>
+                                <option value="tecnologica_especialidad">TE</option>
+                                <option value="especializacion">UN</option>
+                                <option value="maestria">ES</option>
+                                <option value="doctorado">MG</option>
+                                <option value="doctorado">DOC</option>
+                            </select>
+                        
+                        </td>
                             <td><input type="number" name="semestres_aprobados" class="form-control" min="1"></td>
                             <td>
                                 <label class="radio-inline"><input type="radio" name="graduado" value="SI" required>SI</label>
@@ -133,7 +148,18 @@
                             <th>Lo Escribe</th>
                         </tr>
                         <tr>
-                            <td><input type="text" name="idioma" class="form-control" required></td>
+                            <td>
+                                <select name="idioma" class="form-control">
+                                    <option value="" disabled selected>Seleccione un idioma</option>
+                                    <option value="espanol">Español</option>
+                                    <option value="ingles">Inglés</option>
+                                    <option value="frances">Francés</option>
+                                    <option value="aleman">Alemán</option>
+                                    <option value="italiano">Italiano</option>
+                                    <option value="portugues">Portugués</option>
+                                    <option value="mandarin">Mandarín</option>
+                                </select>
+                        </td>
                             <td>
                                 <label class="radio-inline"><input type="radio" name="habla" value="R" required>R</label>
                                 <label class="radio-inline"><input type="radio" name="habla" value="B">B</label>

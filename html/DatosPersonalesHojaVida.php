@@ -15,7 +15,7 @@
     <div class="container">
         <div class="row centered-images">
             <div class="col-sm-4 text-center">
-                <img src="../images/EscudoColombiaPng.png" alt="Escudo de Colombia">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkqrBfWtzYEHZOcWAdArjIdex-EfGiRD8iNQ&s" alt="Escudo de Colombia">
             </div>
             <div class="col-sm-4 text-center">
                 <h4>FORMATO UNICO</h4>
@@ -24,7 +24,7 @@
                 <h6>(Leyes 190 de 1995, 489 y 443 de 1998)</h6>
             </div>
             <div class="col-sm-4 text-center">
-                <img src="../images/WhatsAppImage.jpeg" alt="Foto personal">
+                <img src="https://www.race.es/revista-autoclub/wp-content/uploads/sites/4/2016/09/Toyota-300x262.jpg" alt="Foto personal">
             </div>
         </div>
 
@@ -34,12 +34,14 @@
                 <div class="col-sm-2 text-center"><a href="FormacionAcademica.php">FORMACION ACADEMICA</a></div>
                 <div class="col-sm-2 text-center"><a a href="ExperienciaLaboral.php"> EXPERIENCIA LABORAL </a></div>
                 <div class="col-sm-2 text-center"><a href="TiempoExperiencia.php"> TIEMPO TOTAL DE EXPERIENCIA </a></div>
+                <div class="col-sm-2 text-center"><a href="mostrar_datos.php">DATOS GUARDADOS</a></div>
+
             </div>
 
             <div class="contenedor">
 
-                <!-- El Título De La Sección -->
-                <div class="section-title">1 DATOS PERSONALES</div>
+                
+                <h3>1-DATOS PERSONALES</h3>
 
                 <!-- Personal Information Form -->
                 <div class="row form-section">
@@ -77,8 +79,10 @@
                         <label class="radio-inline"><input type="radio" name="nacionalidad" value="Col" required> COL.</label>
                         <label class="radio-inline"><input type="radio" name="nacionalidad" value="Extranjero" required> EXTRANJERO</label>
                         <br>
-                        <h5>PAÍS</h5>
-                        <input type="text" id="pais" name="pais" required>
+                        PAIS
+                <select id="pais-nacimiento" name="pais_nacimiento">
+                    <option value="">Seleccione un país</option>
+                </select>
                     </div>
                 </div>
 
@@ -90,25 +94,58 @@
                         <label class="radio-inline"><input type="radio" name="libreta_tipo" value="segunda_clase"> Segunda Clase</label>
                         <span>NÚMERO</span> <input type="text" id="libretaNumero" name="libreta_numero">
                         <h5>FECHA Y LUGAR DE NACIMIENTO</h5>
-                        <h5>FECHA</h5>
                         <div class="row">
-                            <div class="col-sm-4"><input type="number" min="1" max="31" placeholder="Día" name="nacimiento_dia" required></div>
-                            <div class="col-sm-4"><input type="number" min="1" max="12" placeholder="Mes" name="nacimiento_mes" required></div>
-                            <div class="col-sm-4"><input type="number" min="1900" max="2100" placeholder="Año" name="nacimiento_año" required></div>
-                        </div>
-                        <h5>PAÍS</h5><input type="text" name="pais_nacimiento" required>
-                        <h5>DEPTO</h5><input type="text" name="departamento_nacimiento" required>
-                        <h5>MUNICIPIO</h5><input type="text" name="municipio_nacimiento" required>
+                          <select id="nacimiento-dia" name="nacimiento_dia" style="width: 10%; box-sizing: border-box;">
+                    <option value="">Día</option>
+                </select>
+                MES
+                <select id="nacimiento-mes" name="nacimiento_mes" style="width: 10%; box-sizing: border-box;">
+                    <option value="">Mes</option>
+                </select>
+                AÑO
+                <select id="nacimiento-año" name="nacimiento_año" style="width: 10%; box-sizing: border-box;">
+                    <option value="">Año</option>
+                </select>
+
+                </div>
+                        PAIS
+                <select id="pais-identificacion" name="pais_nacimiento">
+                    <option value="">Seleccione un país</option>
+                </select>
+
+                <br>
+
+                DEPARTAMENTO
+                <select id="departamento-nacimiento" name="departamento_nacimiento">
+                    <option value="">Seleccione un departamento</option>
+                </select>
+                <br>
+
+                MUNICIPIO
+                <select id="municipio-nacimiento" name="municipio_nacimiento">
+                    <option value="">Seleccione un municipio</option>
+                </select>
                     </div>
 
                     <div class="col-sm-6">
                         <h5>DIRECCIÓN DE CORRESPONDENCIA</h5>
-                        <input type="text" name="direccion_correspondencia" placeholder="Dirección" required>
-                        <h5>PAÍS</h5><input type="text" name="pais_correspondencia" required>
-                        <h5>DEPTO</h5><input type="text" name="departamento_correspondencia" required>
-                        <h5>MUNICIPIO</h5><input type="text" name="municipio_correspondencia" required>
-                        <h5>TELÉFONO</h5><input type="tel" name="telefono" pattern="[0-9]{7,10}" required>
-                        <h5>EMAIL</h5><input type="email" name="email" required>
+                        PAIS
+                <select id="pais-correspondencia" name="pais_correspondencia">
+                    <option value="">Seleccione un país</option>
+                </select>
+
+                <br>
+
+                DEPARTAMENTO
+                <select id="departamento-correspondencia" name="departamento_correspondencia">
+                    <option value="">Seleccione un departamento</option>
+                </select>
+                <br>
+
+                MUNICIPIO
+                <select id="municipio-correspondencia" name="municipio_nacimiento">
+                    <option value="">Seleccione un municipio</option>
+                </select>
                     </div>
                 </div>
 

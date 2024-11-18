@@ -2,7 +2,7 @@
 // Datos de conexión
 $servidor = "localhost";
 $usuario = "root";
-$contrasena = ""; // La contraseña está vacía por defecto en XAMPP
+$contrasena = "roni12345678"; // La contraseña está vacía por defecto en XAMPP
 $base_datos = "hojavida"; // Actualiza el nombre de la base de datos
 
 // Crear la conexión

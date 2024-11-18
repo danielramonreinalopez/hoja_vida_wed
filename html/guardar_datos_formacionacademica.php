@@ -1,10 +1,13 @@
 <?php
+// Mostrar errores para depuración
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+// Incluir la conexión a la base de datos
 include("conexion.php");
 
+// Procesar la solicitud solo si es POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Sanitizar entradas
     $ultimo_grado_aprobado = isset($_POST['ultimo_grado_aprobado']) ? trim($_POST['ultimo_grado_aprobado']) : null;
@@ -14,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Validar entradas obligatorias
     if ($ultimo_grado_aprobado === null) {
-        echo "<div class='alert alert-danger'>El campo 'Ultimo Grado Aprobado' es obligatorio.</div>";
+        echo "<div class='alert alert-danger'>El campo 'Último Grado Aprobado' es obligatorio.</div>";
         exit;
     }
 
@@ -45,22 +48,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $terminacion_anio = isset($_POST['terminacion_anio']) ? (int)$_POST['terminacion_anio'] : null;
     $tarjeta_profesional = isset($_POST['tarjeta_profesional']) ? trim($_POST['tarjeta_profesional']) : null;
 
-    // Preparar consulta para EducacionSuperior
-    $consulta_superior = $com->prepare("INSERT INTO EducacionSuperior (modalidad_academica, semestres_aprobados, graduado, titulo_obtenido, terminacion_mes, terminacion_anio, tarjeta_profesional) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    // Validar si hay datos de educación superior para guardar
+    if ($modalidad_academica !== null) {
+        // Preparar consulta para EducacionSuperior
+        $consulta_superior = $com->prepare("INSERT INTO educacionsuperior (modalidad_academica, semestres_aprobados, graduado, titulo_obtenido, terminacion_mes, terminacion_anio, tarjeta_profesional) VALUES (?, ?, ?, ?, ?, ?, ?)");
 
-    if ($consulta_superior) {
-        $consulta_superior->bind_param("sisssis", $modalidad_academica, $semestres_aprobados, $graduado, $titulo_obtenido_superior, $terminacion_mes, $terminacion_anio, $tarjeta_profesional);
-        try {
-            if ($consulta_superior->execute()) {
-                echo "<div class='alert alert-success'>Datos de educación superior guardados exitosamente.</div>";
-            } else {
-                throw new Exception("Error al guardar los datos: " . $consulta_superior->error);
+        if ($consulta_superior) {
+            $consulta_superior->bind_param("sisssis", $modalidad_academica, $semestres_aprobados, $graduado, $titulo_obtenido_superior, $terminacion_mes, $terminacion_anio, $tarjeta_profesional);
+            try {
+                if ($consulta_superior->execute()) {
+                    echo "<div class='alert alert-success'>Datos de educación superior guardados exitosamente.</div>";
+                } else {
+                    throw new Exception("Error al guardar los datos: " . $consulta_superior->error);
+                }
+            } catch (Exception $e) {
+                error_log($e->getMessage());
+                echo "<div class='alert alert-danger'>Ocurrió un error al guardar los datos de educación superior. Por favor, inténtalo más tarde.</div>";
             }
-        } catch (Exception $e) {
-            error_log($e->getMessage());
-            echo "<div class='alert alert-danger'>Ocurrió un error al guardar los datos de educación superior. Por favor, inténtalo más tarde.</div>";
+            $consulta_superior->close();
         }
-        $consulta_superior->close();
     }
 
     // Datos para Idiomas
@@ -70,28 +76,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $escribe = isset($_POST['escribe']) ? trim($_POST['escribe']) : null;
 
     // Validar entradas obligatorias para Idiomas
-    if ($idioma === null || $habla === null || $lee === null || $escribe === null) {
-        echo "<div class='alert alert-danger'>Todos los campos de idiomas son obligatorios.</div>";
-        exit;
-    }
+    if ($idioma !== null && $habla !== null && $lee !== null && $escribe !== null) {
+        // Preparar consulta para Idiomas
+        $consulta_idiomas = $com->prepare("INSERT INTO Idiomas (idioma, habla, lee, escribe) VALUES (?, ?, ?, ?)");
 
-    // Preparar consulta para Idiomas
-    $consulta_idiomas = $com->prepare("INSERT INTO Idiomas (idioma, habla, lee, escribe) VALUES (?, ?, ?, ?)");
-
-    if ($consulta_idiomas) {
-        $consulta_idiomas->bind_param("ssss", $idioma, $habla, $lee, $escribe);
-        try {
-            if ($consulta_idiomas->execute()) {
-                echo "<div class='alert alert-success'>Datos de idiomas guardados exitosamente.</div>";
-            } else {
-                throw new Exception("Error al guardar los datos: " . $consulta_idiomas->error);
+        if ($consulta_idiomas) {
+            $consulta_idiomas->bind_param("ssss", $idioma, $habla, $lee, $escribe);
+            try {
+                if ($consulta_idiomas->execute()) {
+                    echo "<div class='alert alert-success'>Datos de idiomas guardados exitosamente.</div>";
+                } else {
+                    throw new Exception("Error al guardar los datos: " . $consulta_idiomas->error);
+                }
+            } catch (Exception $e) {
+                error_log($e->getMessage());
+                echo "<div class='alert alert-danger'>Ocurrió un error al guardar los datos de idiomas. Por favor, inténtalo más tarde.</div>";
             }
-        } catch (Exception $e) {
-            error_log($e->getMessage());
-            echo "<div class='alert alert-danger'>Ocurrió un error al guardar los datos de idiomas. Por favor, inténtalo más tarde.</div>";
+            $consulta_idiomas->close();
         }
-        $consulta_idiomas->close();
     }
 }
 
+// Cerrar la conexión a la base de datos
 $com->close();
+?>
