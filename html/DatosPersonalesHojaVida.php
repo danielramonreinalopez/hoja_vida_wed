@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -10,9 +11,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="../javascript/miScript.js"></script>
 
-
     <script>
     document.addEventListener("DOMContentLoaded", function () {
+        // Validación para el campo de documento
         const numeroDocInput = document.getElementById("numeroDoc");
 
         numeroDocInput.addEventListener("input", function () {
@@ -26,8 +27,30 @@
                 document.getElementById("errorDoc").textContent = "";
             }
         });
+
+        // Validación para campos de texto que no permitan solo espacios
+        const camposTexto = ["primerApellido", "segundoApellido", "nombres"];
+
+        camposTexto.forEach(function (campoId) {
+            const input = document.getElementById(campoId);
+
+            input.addEventListener("input", function () {
+                // Elimina espacios al inicio y final y verifica si queda vacío
+                const valorActual = this.value.trim();
+                if (valorActual === "") {
+                    this.setCustomValidity("Este campo no puede contener solo espacios.");
+                } else {
+                    this.setCustomValidity("");
+                }
+            });
+
+            // Evitar que se envíe el formulario con solo espacios en estos campos
+            input.addEventListener("blur", function () {
+                this.value = this.value.trim(); // Eliminar espacios al inicio y final
+            });
+        });
     });
-</script>
+    </script>
 </head>
 
 <body>
@@ -54,12 +77,9 @@
                 <div class="col-sm-2 text-center"><a a href="ExperienciaLaboral.php"> EXPERIENCIA LABORAL </a></div>
                 <div class="col-sm-2 text-center"><a href="TiempoExperiencia.php"> TIEMPO TOTAL DE EXPERIENCIA </a></div>
                 <div class="col-sm-2 text-center"><a href="mostrar_datos.php">DATOS GUARDADOS</a></div>
-
             </div>
 
             <div class="contenedor">
-
-
                 <h3>1-DATOS PERSONALES</h3>
 
                 <!-- Personal Information Form -->
@@ -78,8 +98,8 @@
                     </div>
                 </div>
 
-                <!-- Document and Gender Selection -->
-                <div class="row form-section">
+<!-- Document and Gender Selection -->
+<div class="row form-section">
                 <div class="col-sm-4">
                         <h5>DOCUMENTO DE IDENTIFICACIÓN</h5>
                         <label class="radio-inline"><input type="radio" name="tipo_documento" value="C.C"> C.C</label>
@@ -107,7 +127,7 @@
                     </div>
                 </div>
 
-                <!-- Military Card, Birthdate, and Address -->
+               
                 <div class="row form-section">
                     <div class="col-sm-6">
                         <h5>LIBRETA MILITAR</h5>
@@ -172,7 +192,6 @@
                     </div>
                 </div>
 
-                <!-- Submit Button -->
                 <div class="row form-section">
                     <div class="col-sm-12 text-center">
                         <button type="submit" class="btn btn-primary">Guardar Datos</button>
