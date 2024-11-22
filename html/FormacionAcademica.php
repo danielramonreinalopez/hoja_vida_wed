@@ -31,7 +31,7 @@
 
             <div class="row nav-links">
                 <div class="col-sm-2 text-center"><a href="DatosPersonalesHojaVida.php">DATOS PERSONALES</a></div>
-                <div class="col-sm-2 text-center"><a href="FormacionAcademica.php">FORMACION ACADEMICA</a></div>
+                <div class="col-sm-2 text-center"><a href="index.php">INICIO</a></div>
                 <div class="col-sm-2 text-center"><a href="ExperienciaLaboral.php">EXPERIENCIA LABORAL</a></div>
                 <div class="col-sm-2 text-center"><a href="TiempoExperiencia.php">TIEMPO TOTAL DE EXPERIENCIA</a></div>
                 <div class="col-sm-2 text-center"><a href="mostrar_datos.php">DATOS GUARDADOS</a></div>
@@ -111,17 +111,17 @@
                         </tr>
                         <tr>
                             <td><select name="Modalidad academica" class="form-control">
-                                <option value="" disabled selected>Seleccione un título</option>
-                                <option value="tecnica">TC</option>
-                                <option value="tecnologica">TL</option>
-                                <option value="tecnologica_especialidad">TE</option>
-                                <option value="especializacion">UN</option>
-                                <option value="maestria">ES</option>
-                                <option value="doctorado">MG</option>
-                                <option value="doctorado">DOC</option>
-                            </select>
-                        
-                        </td>
+                                    <option value="" disabled selected>Seleccione un título</option>
+                                    <option value="tecnica">TC</option>
+                                    <option value="tecnologica">TL</option>
+                                    <option value="tecnologica_especialidad">TE</option>
+                                    <option value="especializacion">UN</option>
+                                    <option value="maestria">ES</option>
+                                    <option value="doctorado">MG</option>
+                                    <option value="doctorado">DOC</option>
+                                </select>
+
+                            </td>
                             <td><input type="number" name="semestres_aprobados" class="form-control" min="1"></td>
                             <td>
                                 <label class="radio-inline"><input type="radio" name="graduado" value="SI" required>SI</label>
@@ -159,7 +159,7 @@
                                     <option value="portugues">Portugués</option>
                                     <option value="mandarin">Mandarín</option>
                                 </select>
-                        </td>
+                            </td>
                             <td>
                                 <label class="radio-inline"><input type="radio" name="habla" value="R" required>R</label>
                                 <label class="radio-inline"><input type="radio" name="habla" value="B">B</label>

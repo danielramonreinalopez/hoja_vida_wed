@@ -1,5 +1,5 @@
 <?php
-// Mostrar errores (solo para desarrollo)
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -8,7 +8,8 @@ error_reporting(E_ALL);
 include("conexion.php");
 
 // Función para obtener datos de la base de datos
-function obtenerDatos($conexion, $tabla) {
+function obtenerDatos($conexion, $tabla)
+{
     $query = "SELECT * FROM $tabla";
     return $conexion->query($query);
 }
@@ -24,6 +25,7 @@ $resultExperienciaLaboral = obtenerDatos($com, "ExperienciaLaboral");
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,13 +36,26 @@ $resultExperienciaLaboral = obtenerDatos($com, "ExperienciaLaboral");
             margin-top: 30px;
             margin-bottom: 20px;
         }
+
         .table {
             margin-bottom: 40px;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
+
+        <div class="row nav-links">
+            <div class="col-sm-2 text-center"><a href="DatosPersonalesHojaVida.php">DATOS PERSONALES</a></div>
+            <div class="col-sm-2 text-center"><a href="FormacionAcademica.php">FORMACION ACADEMICA</a></div>
+            <div class="col-sm-2 text-center"><a a href="ExperienciaLaboral.php"> EXPERIENCIA LABORAL </a></div>
+            <div class="col-sm-2 text-center"><a href="TiempoExperiencia.php"> TIEMPO TOTAL DE EXPERIENCIA </a></div>
+            <div class="col-sm-2 text-center"><a href="index.php">INICIO</a></div>
+
+        </div>
+
+
         <!-- Datos Personales -->
         <h1 class="text-center section-title">Datos Personales Guardados</h1>
         <table class="table table-bordered table-striped">
@@ -222,4 +237,5 @@ $resultExperienciaLaboral = obtenerDatos($com, "ExperienciaLaboral");
         </table>
     </div>
 </body>
+
 </html>
