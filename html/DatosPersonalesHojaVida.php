@@ -9,6 +9,25 @@
     <link rel="stylesheet" href="../css/micss.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="../javascript/miScript.js"></script>
+
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const numeroDocInput = document.getElementById("numeroDoc");
+
+        numeroDocInput.addEventListener("input", function () {
+            // Elimina cualquier carácter que no sea número y limita a 10 caracteres
+            const valorActual = this.value.replace(/\D/g, "");
+            if (valorActual.length > 10) {
+                this.value = valorActual.substring(0, 10);
+                document.getElementById("errorDoc").textContent = "El documento no puede superar los 10 dígitos.";
+            } else {
+                this.value = valorActual;
+                document.getElementById("errorDoc").textContent = "";
+            }
+        });
+    });
+</script>
 </head>
 
 <body>
@@ -61,13 +80,15 @@
 
                 <!-- Document and Gender Selection -->
                 <div class="row form-section">
-                    <div class="col-sm-4">
+                <div class="col-sm-4">
                         <h5>DOCUMENTO DE IDENTIFICACIÓN</h5>
                         <label class="radio-inline"><input type="radio" name="tipo_documento" value="C.C"> C.C</label>
                         <label class="radio-inline"><input type="radio" name="tipo_documento" value="C.E"> C.E</label>
                         <label class="radio-inline"><input type="radio" name="tipo_documento" value="P.S"> Pas.</label>
                         <br>
-                        <span>No.</span> <input type="text" id="numeroDoc" name="numero_doc" maxlength="16" required>
+                        <span>No.</span> 
+                        <input type="text" id="numeroDoc" name="numero_doc" maxlength="10" required>
+                        <small id="errorDoc" style="color: red; font-size: 12px;"></small>
                     </div>
                     <div class="col-sm-4">
                         <h5>SEXO</h5>
@@ -93,6 +114,7 @@
                         <label class="radio-inline"><input type="radio" name="libreta_tipo" value="primera_clase"> Primera Clase</label>
                         <label class="radio-inline"><input type="radio" name="libreta_tipo" value="segunda_clase"> Segunda Clase</label>
                         <span>NÚMERO</span> <input type="text" id="libretaNumero" name="libreta_numero">
+                        <br>
                         <h5>FECHA Y LUGAR DE NACIMIENTO</h5>
                         <div class="row">
                             <select id="nacimiento-dia" name="nacimiento_dia" style="width: 10%; box-sizing: border-box;">
@@ -108,6 +130,7 @@
                             </select>
 
                         </div>
+                        
                         PAIS
                         <select id="pais-identificacion" name="pais_nacimiento">
                             <option value="">Seleccione un país</option>

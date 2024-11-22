@@ -36,9 +36,11 @@ $resultExperienciaLaboral = obtenerDatos($com, "ExperienciaLaboral");
             margin-top: 30px;
             margin-bottom: 20px;
         }
-
         .table {
             margin-bottom: 40px;
+        }
+        .nav-links .col-sm-2 {
+            margin-bottom: 15px;
         }
     </style>
 </head>

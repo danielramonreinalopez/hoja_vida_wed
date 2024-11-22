@@ -2,7 +2,7 @@
 // Datos de conexión
 $servidor = "localhost";
 $usuario = "root";
-$contrasena = "";
+$contrasena = "roni12345678";
 $base_datos = "hojavida"; // Actualiza el nombre de la base de datos
 
 // Crear la conexión
